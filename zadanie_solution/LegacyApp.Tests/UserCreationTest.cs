@@ -1,5 +1,5 @@
 namespace LegacyApp.Tests;
-public class UnitTest
+public class UserCreationTest
 {
     [Fact]
     public void Test1()

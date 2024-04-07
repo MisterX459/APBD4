@@ -1,3 +1,5 @@
+using System;
+
 namespace LegacyApp;
 
 public class UserVerification : IUserVerification
@@ -8,6 +10,9 @@ public class UserVerification : IUserVerification
     {
         Repository = repository;
     }
+
+    
+
     public bool DataVerification(string FirstName, string LastName, string Email)
     {
         if (string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(LastName))

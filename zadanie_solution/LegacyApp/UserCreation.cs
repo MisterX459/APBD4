@@ -1,3 +1,5 @@
+using System;
+
 namespace LegacyApp;
 
 public class UserCreation : IUserCreation
@@ -7,13 +9,14 @@ public class UserCreation : IUserCreation
 
     public UserCreation(ClientRepository clientRepository, UserCreditService userCreditService)
     {
-        repository= clientRepository;
+        repository = clientRepository;
         CreditService = userCreditService;
     }
 
     public bool AddUser(string firstName, string lastName, string email, DateTime dateOfBirth, int clientId)
     {
-        if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || !email.Contains("@") || !email.Contains("."))
+        if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || !email.Contains("@") ||
+            !email.Contains("."))
         {
             return false;
         }
@@ -70,4 +73,5 @@ public class UserCreation : IUserCreation
                 break;
         }
     }
+
 }

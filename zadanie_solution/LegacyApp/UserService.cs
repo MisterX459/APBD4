@@ -10,8 +10,8 @@ namespace LegacyApp
 
     public UserService(ClientRepository repository, UserCreditService creditService)
     {
-      repository = repository;
-      UserCreditService = creditService;
+      Repository = repository;
+      CreditService = creditService;
     }
 
     public UserService() : this(new ClientRepository(), new UserCreditService())
@@ -19,7 +19,7 @@ namespace LegacyApp
 
     }
 
-    bool AddUser(String FirstName, string LastName, string email, DateTime BirthDate,
+    public bool AddUser(String FirstName, string LastName, string email, DateTime BirthDate,
       int Id)
     {
       var UserCreation = new UserCreation(Repository, CreditService);
